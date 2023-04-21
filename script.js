@@ -25,15 +25,15 @@ copyBtn.addEventListener('click', function() {
 
 function handleChange(event) {
     event.preventDefault()
-    inputText = event.target.value
+    inputTextWithCapital = event.target.value
+    inputText = inputTextWithCapital.toLowerCase()
 }
 
 function handleCipher(e) {
     e.preventDefault()
     var hasAccents = /^[a-zA-Z\u00C0-\u017F]+,\s[a-zA-Z\u00C0-\u017F]+$/u.test(inputText);
-    var hasCapitalLetters = /[A-Z]/.test(inputText);
-    if (hasAccents || hasCapitalLetters) {
-        resultEmpty.innerHTML = `<p>Solo letras minúsculas y sin acentos 💛</p>`
+    if (hasAccents) {
+        resultEmpty.innerHTML = `<p>Ingrese solo letras sin acentos 💛</p>`
     } else {
         if (resultEmpty.style.display == "none") {
             resultResponse.style.display = "flex"
