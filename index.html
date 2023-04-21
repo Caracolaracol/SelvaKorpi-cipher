@@ -14,12 +14,13 @@
 <body>
     <div class="body__container">   
         <div class="body__logo-container">
-            <img src="assets/Logo.svg" alt="a de alura">
+            <img src="assets/logo3.png" alt="a de alura">
         </div>
 
         <div class="body__input-container">
-                <textarea form="form" class="input__textarea" type="text" placeholder="Ingrese texto aqui"> </textarea>
-            </form>
+
+                <textarea form="form" id="message" name="message" class="input__textarea" type="text" placeholder="Ingrese texto aqui" required> </textarea>
+            
         </div>
 
 
@@ -30,18 +31,24 @@
                     Solo letras minúsculas y sin acentos
                 </p>
             </div>
+            <select id="options" class="advice__select" required>
+                <option value="">Escoje un transformador:</option>
+                <option value="senitpolar">Senit Polar</option>
+                <option value="selvakorpi">Selva Korpi</option>
+            </select>
         </div>
 
         <div class="body__btns-container">
             <form action="" id="form" class="btns__inner">
                 <div class="cipher-btn__container">
-                    <button class="cipher-btn__encriptar">
+                    
+                    <button form="form" class="cipher-btn__encriptar">
                         Encriptar
                     </button>
                 </div>
                 
                 <div class="cipher-btn__container">
-                    <button class="cipher-btn__desencriptar">
+                    <button form="form" class="cipher-btn__desencriptar">
                         Desencriptar
                     </button> 
                 </div>
@@ -55,11 +62,15 @@
                     <h2>Ningún mensaje fue encontrado</h2>
                     <p>Ingresa el texto que desees encriptaro o desencriptar</p>
                 </div> 
+                
                 <div class="result__response">
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor vitae minima accusantium. Iusto vitae aliquam assumenda tempora! Ullam iste neque, temporibus labore quisquam cum excepturi ratione inventore numquam, pariatur porro optio doloremque, aspernatur alias veniam est repellendus quam dolore molestiae! Placeat corporis explicabo, iusto est nulla exercitationem quaerat eligendi dolorem.
+                    <div class="text-to-cipher">
+
+                    </div>
+                    <p class="text-cipher">
+                        
                     </p>
-                    <button>Copiar</button>
+                    <button class="result__btn-copy">Copiar</button>
                 </div>
             </div>
         </div>
