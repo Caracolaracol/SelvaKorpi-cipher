@@ -1,20 +1,16 @@
 const message = document.getElementById('message')
 const cipherbtn = document.querySelector('.cipher-btn__encriptar')
 const decipherbtn = document.querySelector('.cipher-btn__desencriptar')
-
 const cipheredMessage = document.querySelector('.text-cipher')
 const messagetocipher = document.querySelector('.text-to-cipher')
-
 const resultResponse = document.querySelector('.result__response')
 const resultEmpty = document.querySelector('.result__empty')
 const copyBtn = document.querySelector('.result__btn-copy')
-
 const optionsTransformers = document.querySelector('#options')
-let inputText
 
+let inputText
 let arrayVocals = ["e", "l", "v", "a", "k", "o", "r", "p", "i"]
 let arrayChanges = ['o', 'r', 'p', 'i', "s", "e", "l", "v", "a"]
-
 let arrayVocalsSenit = ["e", "n", "i", "t", "p", "o", "l", "a", "r"]
 let arrayChangesSenit = ['o', 'l', 'a', 'r', "s", "e", "n", "i", "t"]
 message.value = ''
@@ -24,7 +20,6 @@ cipherbtn.addEventListener('click', handleCipher)
 decipherbtn.addEventListener('click', handleDecipher)
 copyBtn.addEventListener('click', function() {
   navigator.clipboard.writeText(cipheredMessage.innerText); 
-  console.log(cipheredMessage.innerText)
   copyBtn.innerHTML = `Copiado!`
 })
 
@@ -76,26 +71,29 @@ function handleDecipher(e) {
 }
 
 function cipher(text) {
-    console.log(optionsTransformers.selectedIndex)
-    if (optionsTransformers.selectedIndex == 2) {
-        let result = text.replace(/s/gi, 'K')
-        for (let i = 0; i < 9; i++) {
-            result = result.replace(new RegExp(arrayVocals[i], "g") , arrayChanges[i].toUpperCase())
-        }
-        let loweredresut = result.toLowerCase()
-        return loweredresut
-    } else if (optionsTransformers.selectedIndex == 1) {
-        let result = text.replace(/s/gi, 'P')
-        for (let i = 0; i < 9; i++) {
-            result = result.replace(new RegExp(arrayVocalsSenit[i], "g") , arrayChangesSenit[i].toUpperCase())
-        }
-        let loweredresut = result.toLowerCase()
-        return loweredresut
-    } else if (optionsTransformers.selectedIndex == 0) {
-       return false
+  if (optionsTransformers.selectedIndex == 2) {
+    let result = text.replace(/s/gi, "K");
+    for (let i = 0; i < 9; i++) {
+      result = result.replace(
+        new RegExp(arrayVocals[i], "g"),
+        arrayChanges[i].toUpperCase()
+      );
     }
-
-    
+    let loweredresut = result.toLowerCase();
+    return loweredresut;
+  } else if (optionsTransformers.selectedIndex == 1) {
+    let result = text.replace(/s/gi, "P");
+    for (let i = 0; i < 9; i++) {
+      result = result.replace(
+        new RegExp(arrayVocalsSenit[i], "g"),
+        arrayChangesSenit[i].toUpperCase()
+      );
+    }
+    let loweredresut = result.toLowerCase();
+    return loweredresut;
+  } else if (optionsTransformers.selectedIndex == 0) {
+    return false;
+  }
 }
 
 function deCipher(text) {
