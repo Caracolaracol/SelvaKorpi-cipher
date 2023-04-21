@@ -220,12 +220,12 @@ Advice text
     flex-direction: column;
     padding-bottom: 1rem;
     gap:1rem;
-
+    justify-content:center
 }
 .advice__inner {
     display: flex;
-    justify-content: flex-start;
-    padding-left: 1rem;
+    justify-content: flex-center;
+    padding-left: 3rem;
     gap: 10px;
 }
 
@@ -239,16 +239,17 @@ Advice text
     color: var(--violet);
     border-radius: 7px;
     font-size: 18px;
-    margin-left: 3rem;
-    margin-right: 3rem;
+    margin-left: 2.2rem;
+    margin-right: 2.2rem;
 }
 
 @media only screen and (min-width: 640px) {
     .body__advice-container {
         display: flex;
-        justify-content: space-evenly;
+        justify-content:center;
+        align-items: center;
         flex-direction: row;
-        gap:0;
+        gap:1;
     
     }
     .advice__inner {
@@ -256,6 +257,7 @@ Advice text
         max-width: none;
         padding-left: 0;
         margin: 0;
+        justify-content:center;
        
     }   
     .advice__select {
@@ -270,13 +272,15 @@ Advice text
         max-width: none;
         padding-left: 0;
         margin: 0;
+        justify-content:center
        
     }   
     .body__advice-container {
         display: flex;
-        justify-content: space-evenly;
+        justify-content:center;
+        align-items: center;
         flex-direction: row;
-        gap:0;
+        gap:1;
     }
 
     .advice__select {
@@ -379,19 +383,35 @@ RESULT
 ----------------------------------------------*/
 .body__result-inner {
     padding: 1rem;
+    
 }
 .result__empty, .result__response {
-    background-color: white;
-    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
-    border-radius: 32px;
+    background-color: rgba(229, 221, 239, 0.276);
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.41);
+    border-radius: 15px;
 }
 
 .result__empty {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     padding: 3rem;
     animation: fadein .4s;
+
+}
+.result__empty h2 {
+    font-family: 'TommyLight';
+    font-style: italic;
+}
+
+.result__made-text {
+    font-size: 13px;
+    font-style: italic;
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+    margin-top: 1rem;
+    border-top: 1px solid #2a1f50b8;
 }
 
 .result__response {
@@ -408,11 +428,12 @@ RESULT
 .result__btn-copy {
     width: 80%;
     height: 67px;
-    color: var(--dark-blue-300);
+    color: var(--violetdark);
     background-color: var(--light-blue100);
     border-radius: 24px;
     border: 1px solid var(--dark-blue-300);
     margin-top: 4rem;
+    font-size: 18px;
 }
 .result__btn-copy:active {
     background-color: var(--violet);
