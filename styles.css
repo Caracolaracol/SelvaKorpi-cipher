@@ -46,7 +46,7 @@ border: 1px solid #fff;
     --dark-blue-300: #0A3871;
     --dark-blue-400: #072861;
     --light-blue100: #F3F5FC;
-    --negro: #0A070F;
+    --negro: #272430;
     --violet:#d7d2eb ;
     --violethover:#e8e5f5;
     --violetlight:#594b88 ;
@@ -82,7 +82,30 @@ a {
 body {
     min-height: 100vh;
 }
+@font-face {
+    font-family: 'Tommy';
+    src: url('./assets/fonts/MADE Tommy Soft Medium PERSONAL USE.otf') format('opentype');
+    font-style: normal;
+    font-weight: normal;
+  }
+  @font-face {
+    font-family: 'TommyLight';
+    src: url('./assets/fonts/MADE Tommy Soft Light PERSONAL USE.otf') format('opentype');
+  
+  }
+  @font-face {
+    font-family: 'TommyRegular';
+    src: url('./assets/fonts/MADE Tommy Soft Regular PERSONAL USE.otf') format('opentype');
+    font-style: normal;
+    font-weight: normal;
+  }
 
+  @font-face {
+    font-family: 'TommyBold';
+    src: url('./assets/fonts/MADE TOMMY ExtraBold_PERSONAL USE.otf') format('opentype');
+    font-style: normal;
+    font-weight: bold;
+  }
 /*----------------------------------------------
 ------------------------------------------------
 1. Universal Styles
@@ -123,8 +146,8 @@ Logo
 ----------------------------------------------*/
 
 .body__logo-container img {
-    width:100px;
-    padding:1rem;
+    width:80px;
+    padding:0.2rem;
     
 }
 
@@ -135,11 +158,25 @@ Logo
 
 .body__logo-container h1 {
     font-size: 24px;
+    font-family: 'TommyRegular';
+    color: var(--negro);
+}
+.body__logo-container h2 {
+    font-size: 14px;
+    font-family: 'TommyLight';
+    color: var(--negro);
 }
 
 @media only screen and (min-width: 640px) {
     .body__logo-container img {
-        width:150px;;
+        width:150px;
+        padding:1rem;
+    }
+    .body__logo-container h1 {
+        font-size: 2.4rem;
+    }
+    .body__logo-container h2 {
+        font-size: 18px;
     }
 }
 
@@ -358,8 +395,7 @@ RESULT
 }
 
 .result__response {
-    /* display: none; */
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     padding: 2rem;
