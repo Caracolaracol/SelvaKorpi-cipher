@@ -153,5 +153,6 @@ function validador(newtext) {
         cipheredMessage.innerHTML = `<p>Tienes que seleccionar primero un transformador para cifrar tu texto! 💛</p>`
         } else {
             cipheredMessage.innerHTML = `${newtext}`
+            copyBtn.innerHTML = `Copiar`
         }
 }
