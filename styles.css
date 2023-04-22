@@ -78,9 +78,30 @@ html {
 a {
 	outline: none;
 	text-decoration: none;
+    letter-spacing: 1px;
+    
+}
+h1 {
+    cursor:default;
+    -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none;
+}
+h2 {
+    cursor: default;
+    -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none;
+}
+a:visited {
+    color:#443449
+}
+a:hover {
+    color: #312559;
 }
 body {
     min-height: 100vh;
+
 }
 @font-face {
     font-family: 'Tommy';
@@ -113,7 +134,6 @@ body {
 ----------------------------------------------*/
 .body__container {
     background: linear-gradient(180deg, #e6e6e3 0%, #e0e0d3 20%, #d0d0c7 100%);
-    
     box-sizing: border-box;
     display: grid;
     grid-template-columns: 1fr;
@@ -140,11 +160,13 @@ body {
     ". result"
     ". result"
     ". result"; 
+    padding: 1rem;
 
     }
     @media only screen and (min-width: 1240px){
         .body__container {
             grid-template-columns: 2.3fr 1.1fr;
+            padding: 2rem;
         }
     }
 }
@@ -158,14 +180,18 @@ Logo
 .body__logo-container img {
     width:80px;
     padding:0.2rem;
+    margin-right: 1rem;
     
 }
-
+.logo__title > h1 {
+    vertical-align: text-top;
+}
 .body__logo-container {
     display: flex;
     align-items: center;
     padding-top: 1.2rem;
     padding-bottom: .5rem;
+    padding-left:.3rem;
 }
 
 .body__logo-container h1 {
@@ -191,6 +217,7 @@ Logo
         font-size: 18px;
     }
     .body__logo-container {
+        padding-left:0rem;
         padding-top: .2rem;
     }
 }
@@ -548,5 +575,8 @@ RESULT
     }
     .result__made-text {
         font-size: 14px;
+    }
+    .result__empty h2 { 
+     font-size: 24px;    
     }
 }
