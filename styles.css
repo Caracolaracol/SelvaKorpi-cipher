@@ -165,6 +165,7 @@ Logo
     display: flex;
     align-items: center;
     padding-top: 1.2rem;
+    padding-bottom: .5rem;
 }
 
 .body__logo-container h1 {
