@@ -13,8 +13,9 @@ let arrayVocals = ["e", "l", "v", "a", "k", "o", "r", "p", "i"]
 let arrayChanges = ['o', 'r', 'p', 'i', "s", "e", "l", "v", "a"]
 let arrayVocalsSenit = ["e", "n", "i", "t", "p", "o", "l", "a", "r"]
 let arrayChangesSenit = ['o', 'l', 'a', 'r', "s", "e", "n", "i", "t"]
-message.value = ''
+const ACCENTS_VOWELS = "áéíóúàèìòùâêîôûäëïöü";
 
+message.value = ''
 message.addEventListener('input', handleChange)
 cipherbtn.addEventListener('click', handleCipher)
 decipherbtn.addEventListener('click', handleDecipher)
@@ -26,7 +27,35 @@ copyBtn.addEventListener('click', function() {
 function handleChange(event) {
     event.preventDefault()
     inputTextWithCapital = event.target.value
-    inputText = inputTextWithCapital.toLowerCase()
+
+    inputText = inputTextWithCapital.toLowerCase().replace(/[áéíóúàèìòùâêîôûäëïöü]/g, function(match) {
+      switch(match) {
+        case "á":
+        case "à":
+        case "â":
+          return "a";
+        case "é":
+        case "è":
+        case "ê":
+          return "e";
+        case "í":
+        case "ì":
+        case "î":
+          return "i";
+        case "ó":
+        case "ò":
+        case "ô":
+        case "ö":
+          return "o";
+        case "ú":
+        case "ù":
+        case "û":
+        case "ü":
+          return "u";
+        default:
+          return match;
+      }
+    })
 }
 
 function handleCipher(e) {
@@ -71,7 +100,7 @@ function handleDecipher(e) {
 }
 
 function cipher(text) {
-  if (optionsTransformers.selectedIndex == 2) {
+  if (optionsTransformers.selectedIndex == 1) {
     let result = text.replace(/s/gi, "K");
     for (let i = 0; i < 9; i++) {
       result = result.replace(
@@ -81,7 +110,7 @@ function cipher(text) {
     }
     let loweredresut = result.toLowerCase();
     return loweredresut;
-  } else if (optionsTransformers.selectedIndex == 1) {
+  } else if (optionsTransformers.selectedIndex == 0) {
     let result = text.replace(/s/gi, "P");
     for (let i = 0; i < 9; i++) {
       result = result.replace(
@@ -91,13 +120,11 @@ function cipher(text) {
     }
     let loweredresut = result.toLowerCase();
     return loweredresut;
-  } else if (optionsTransformers.selectedIndex == 0) {
-    return false;
-  }
+  } 
 }
 
 function deCipher(text) {
-    if (optionsTransformers.selectedIndex == 2) {
+    if (optionsTransformers.selectedIndex == 1) {
       let result = text.replace(/k/gi, "S");
       for (let i = 0; i < 9; i++) {
         result = result.replace(
@@ -107,7 +134,7 @@ function deCipher(text) {
       }
       let loweredresut = result.toLowerCase();
       return loweredresut;
-    } else if (optionsTransformers.selectedIndex == 1) {
+    } else if (optionsTransformers.selectedIndex == 0) {
       let result = text.replace(/p/gi, "S");
       for (let i = 0; i < 9; i++) {
         result = result.replace(
@@ -118,9 +145,7 @@ function deCipher(text) {
       let loweredresut = result.toLowerCase();
       return loweredresut;
     }
-    else if (optionsTransformers.selectedIndex == 0) {
-        return false
-    }
+    
 }
 
 function validador(newtext) {

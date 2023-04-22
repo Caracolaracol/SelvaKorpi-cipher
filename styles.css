@@ -112,14 +112,18 @@ body {
 ------------------------------------------------
 ----------------------------------------------*/
 .body__container {
-    background: linear-gradient(180deg, #e5e3ed 0%, #d7d2eb 80%, #b59fe7 100%);
+    background: linear-gradient(180deg, #c6c6c4 0%, #acaba5 20%, #aeada0 100%);
+    
     box-sizing: border-box;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: .4fr 1.3fr .12fr .2fr 1fr;
     position: relative;
     min-height: 100vh;
+    
 }
+ 
+
 
 @media only screen and (min-width: 640px) {
     .body__container {
@@ -129,13 +133,19 @@ body {
 
 @media only screen and (min-width: 1024px) {
     .body__container {
-        grid-template-columns: 2.2fr 1fr;
+        grid-template-columns:1.5fr 3.5fr;
         grid-template-rows: .3fr 1.3fr .12fr .2fr;
         grid-template-areas: 
     ". result"
     ". result"
     ". result"
     ". result"; 
+
+    }
+    @media only screen and (min-width: 1240px){
+        .body__container {
+            grid-template-columns: 2.3fr 1.1fr;
+        }
     }
 }
 
@@ -188,6 +198,7 @@ Text Area
 .body__input-container {
     display: flex;
     justify-content: center;
+    
 }
 
 .input__textarea {
@@ -199,6 +210,7 @@ Text Area
     font-size: 32px;
     background-color:transparent;
     color: var(--negro);
+    
     animation: fadein .4s;
 }
 @keyframes fadein {
@@ -235,12 +247,16 @@ Advice text
     padding: 8px;
     padding-left: 12px;
     padding-right: 12px;
-    background-color: var(--violetdark);
+    background-color: #272430;
     color: var(--violet);
     border-radius: 7px;
     font-size: 18px;
     margin-left: 2.2rem;
     margin-right: 2.2rem;
+}
+.advice__select:hover {
+    background-color: #393930;
+    
 }
 
 @media only screen and (min-width: 640px) {
@@ -310,32 +326,53 @@ Cipher button
 .cipher-btn__encriptar {
     width: 90vw;
     height: 67px;
-    background: var(--violetdark);
+    background: #272430;
     border-radius: 24px;
     border: 1px solid var(--violetdark);
     color: white;
     font-size: 18px;
+    font-family: 'Tommy';
+    letter-spacing: 1px;
+    transition-property: all;
+    transition-duration: 100ms;
+    transition-timing-function: ease-in;
+    cursor: pointer;
+    z-index: 99;
 }
+
 .cipher-btn__encriptar:hover {
-    background-color: var(--violetlight);
+    background-color: #dadcca;
+    color: #2f3024;
+    border: 1px solid #dadcca;
 }
 .cipher-btn__encriptar:active {
-    background-color: var(--negro);
+    background-color: #b3b5a4;
 }
 .cipher-btn__desencriptar {
     width: 90vw;
     height: 67px;
     color: var(--negro);
-    background-color: var(--violet);
+    background-color: #e5e3ed;
     border-radius: 24px;
-    border: 1px solid var(--dark-blue-300);
+    border: 1px solid var(--violet);
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.41);
     font-size: 18px;
+    font-family: 'Tommy';
+    letter-spacing: 1px;
+    transition-property: all;
+    transition-duration: 100ms;
+    transition-timing-function: ease-in;
+    cursor: pointer;
+    z-index: 100000;
 }
+    
 .cipher-btn__desencriptar:hover {
-    background-color: var(--violethover);
+    background-color: #2f3024;
+    color: #dadcca;
+    border: 1px solid #2f3024;
 }
 .cipher-btn__desencriptar:active {
-    background-color: var(--violet);
+    background-color: #1a1b13;
 }
 
 @media only screen and (min-width: 640px) {
@@ -357,6 +394,7 @@ Cipher button
         height: 67px;
 
     }
+
 }
 @media only screen and (min-width: 1024px) {
     #form {
@@ -386,7 +424,7 @@ RESULT
     
 }
 .result__empty, .result__response {
-    background-color: rgba(229, 221, 239, 0.276);
+    background-color: #cbcabcad;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.41);
     border-radius: 15px;
 }
@@ -423,6 +461,8 @@ RESULT
     max-height: 95vh;
     animation: fadein .4s;
     
+    
+    
 }
 
 .result__btn-copy {
@@ -434,6 +474,7 @@ RESULT
     border: 1px solid var(--dark-blue-300);
     margin-top: 4rem;
     font-size: 18px;
+    font-family: 'Tommy';
 }
 .result__btn-copy:active {
     background-color: var(--violet);
@@ -441,6 +482,9 @@ RESULT
 
 .text-cipher {
     animation: fadein .4s;
+    font-family: 'TommyLight';
+    font-weight: 300;
+    font-size: 18px;
 }
 @media only screen and (min-width: 640px)  {
     .result__empty {
@@ -459,7 +503,7 @@ RESULT
     }
     .body__result-inner {
         padding: 0rem;
-        height: 95%;
+        height: 98%;
         
     }
     .result__empty {
