@@ -164,6 +164,7 @@ Logo
 .body__logo-container {
     display: flex;
     align-items: center;
+    padding-top: 1rem;
 }
 
 .body__logo-container h1 {
