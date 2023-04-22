@@ -164,7 +164,7 @@ Logo
 .body__logo-container {
     display: flex;
     align-items: center;
-    padding-top: 1rem;
+    padding-top: 1.2rem;
 }
 
 .body__logo-container h1 {
@@ -188,6 +188,9 @@ Logo
     }
     .body__logo-container h2 {
         font-size: 18px;
+    }
+    .body__logo-container {
+        padding-top: .2rem;
     }
 }
 
