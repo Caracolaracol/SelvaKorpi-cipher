@@ -447,6 +447,7 @@ RESULT
 .result__empty h2 {
     font-family: 'TommyLight';
     font-style: italic;
+    font-size: 17px;
 }
 
 .result__made-text {
@@ -454,9 +455,8 @@ RESULT
     font-family: 'TommyRegular';
    
     font-style: italic;
-    padding-top: .4rem;
-    margin-top: .6rem;
-    border-top: 1px solid #2a1f50b8;
+    margin-top: .3rem;
+    
 }
 
 .result__response {
@@ -497,6 +497,9 @@ RESULT
 @media only screen and (min-width: 640px)  {
     .result__empty {
         display: flex;
+    }
+    .result__empty h2 {
+        font-size: 17px;
     }
     .result__response {
         display: none;
