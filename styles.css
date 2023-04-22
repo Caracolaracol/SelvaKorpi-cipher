@@ -169,7 +169,7 @@ Logo
 }
 
 .body__logo-container h1 {
-    font-size: 24px;
+    font-size: 28px;
     font-family: 'TommyRegular';
     color: var(--negro);
 }
@@ -185,7 +185,7 @@ Logo
         padding:1rem;
     }
     .body__logo-container h1 {
-        font-size: 2.4rem;
+        font-size: 3.1rem;
     }
     .body__logo-container h2 {
         font-size: 18px;
@@ -194,7 +194,15 @@ Logo
         padding-top: .2rem;
     }
 }
-
+@media only screen and (min-width: 1024px) {
+    .body__logo-container img {
+        width:180px;
+        padding:0.6rem;
+    }
+    .body__logo-container h1 {
+        font-size: 3.7rem;
+    }
+}
 /*----------------------------------------------
 ------------------------------------------------
 Text Area
