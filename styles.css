@@ -112,7 +112,7 @@ body {
 ------------------------------------------------
 ----------------------------------------------*/
 .body__container {
-    background: linear-gradient(180deg, #cacac6 0%, #a8a89a 20%, #acac93 100%);
+    background: linear-gradient(180deg, #e6e6e3 0%, #e0e0d3 20%, #d0d0c7 100%);
     
     box-sizing: border-box;
     display: grid;
