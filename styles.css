@@ -446,11 +446,12 @@ RESULT
 }
 
 .result__made-text {
-    font-size: 13px;
+    font-size: 12px;
+    font-family: 'TommyRegular';
+   
     font-style: italic;
-    padding-top: 1rem;
-    padding-bottom: 4rem;
-    margin-top: 1rem;
+    padding-top: .4rem;
+    margin-top: .6rem;
     border-top: 1px solid #2a1f50b8;
 }
 
@@ -527,5 +528,8 @@ RESULT
         margin-top: 2rem;
         margin-right: 2rem;
         max-height: 95vh;
+    }
+    .result__made-text {
+        font-size: 14px;
     }
 }
