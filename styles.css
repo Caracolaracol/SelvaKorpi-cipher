@@ -133,7 +133,7 @@ body {
 ------------------------------------------------
 ----------------------------------------------*/
 .body__container {
-    background: linear-gradient(180deg, #e6e6e3 0%, #e0e0d3 20%, #d0d0c7 100%);
+    background: linear-gradient(180deg, #efefed 0%, #eeeee4 20%, #f7f7e9 100%);
     box-sizing: border-box;
     display: grid;
     grid-template-columns: 1fr;
@@ -153,24 +153,26 @@ body {
 
 @media only screen and (min-width: 1024px) {
     .body__container {
-        grid-template-columns:1.5fr 3.5fr;
-        grid-template-rows: .3fr 1.3fr .12fr .2fr;
+        grid-template-columns: 2fr 1.3fr; 
+        grid-template-rows: .8fr 2.2fr 0.1fr 1.1fr;
         grid-template-areas: 
-    ". result"
-    ". result"
-    ". result"
-    ". result"; 
-    padding: 1rem;
+    "Title output"
+    "input output"
+    "Transformer output"
+    "Cyph output"; 
+    padding: 3rem 1rem 2rem 3rem;
 
     }
-    @media only screen and (min-width: 1240px){
-        .body__container {
-            grid-template-columns: 2.3fr 1.1fr;
-            padding: 2rem;
-        }
-    }
+
 }
+@media only screen and (min-width: 1424px) {
+    .body__container {
+ 
+    padding: 3rem;
 
+    }
+
+}
 /*----------------------------------------------
 ------------------------------------------------
 Logo
@@ -193,6 +195,7 @@ Logo
     padding-top: 1.2rem;
     padding-bottom: .5rem;
     margin-left:.4rem;
+    
 }
 
 .body__logo-container h1 {
@@ -231,6 +234,10 @@ Logo
     .body__logo-container h1 {
         font-size: 3.7rem;
     }
+    .body__logo-container {
+        grid-area: Title;
+        transform: translateX(-25px) translateY(-36px);
+    }
 }
 /*----------------------------------------------
 ------------------------------------------------
@@ -240,17 +247,18 @@ Text Area
 .body__input-container {
     display: flex;
     justify-content: center;
-    
+    padding-bottom: 20px;
 }
 
 .input__textarea {
-    padding: 0;
+    padding: 10px;
     border: 0;
+    border-radius: 15px;
     width: 80%;
     resize: none;
     font-family: 'TommyLight';
     font-size: 32px;
-    background-color:transparent;
+    background-color:#e7e7dc;
     color: var(--negro);
     
     animation: fadein .4s;
@@ -264,6 +272,11 @@ Text Area
         width: 80%;
     }
 }
+@media only screen and (min-width:1024px) {
+    .body__input-container {
+        grid-area: input;
+    }
+}
 /*----------------------------------------------
 ------------------------------------------------
 Advice text
@@ -274,7 +287,8 @@ Advice text
     flex-direction: column;
     padding-bottom: 1rem;
     gap:1rem;
-    justify-content:center
+    justify-content:center;
+    
 }
 .advice__inner {
     display: flex;
@@ -295,8 +309,8 @@ Advice text
     color: var(--violet);
     border-radius: 7px;
     font-size: 18px;
-    margin-left: 2.2rem;
-    margin-right: 2.2rem;
+    width: 40vw;
+    margin: 0 auto;
 }
 .advice__select:hover {
     background-color: #393930;
@@ -321,6 +335,7 @@ Advice text
        
     }   
     .advice__select {
+        width: 12rem;
         margin-left: 0;
     margin-right: 0;
     }
@@ -341,9 +356,12 @@ Advice text
         align-items: center;
         flex-direction: row;
         gap:1;
+        padding-bottom:0;
+        grid-area: Transformer;
     }
 
     .advice__select {
+        width: 10rem;
         margin-left: 0;
     margin-right: 0;
     }
@@ -357,6 +375,7 @@ Cipher button
 .body__btns-container {
     display: flex;
     justify-content: center;
+    
 }
 
 .btns__inner {
@@ -368,11 +387,12 @@ Cipher button
 } 
 
 .cipher-btn__encriptar {
-    width: 90vw;
+    width: 70vw;
     height: 67px;
     background: #272430;
     border-radius: 24px;
     border: 1px solid var(--violetdark);
+    box-shadow: 0px 6px 21px -2px rgba(0, 0, 0, 0.25);
     color: white;
     font-size: 18px;
     font-family: 'Tommy';
@@ -393,13 +413,13 @@ Cipher button
     background-color: #b3b5a4;
 }
 .cipher-btn__desencriptar {
-    width: 90vw;
+    width: 70vw;
     height: 67px;
     color: var(--negro);
     background-color: #e5e3ed;
     border-radius: 24px;
     border: 1px solid var(--violet);
-    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.41);
+    box-shadow: 0px 6px 21px -2px rgba(0, 0, 0, 0.25);
     font-size: 18px;
     font-family: 'Tommy';
     letter-spacing: 1px;
@@ -428,12 +448,12 @@ Cipher button
         gap: 24px;
     } 
     .cipher-btn__desencriptar {
-        width: 40vw;
+        width: 15rem;
         max-width: 24rem;
         height: 67px;
     }
     .cipher-btn__encriptar {
-        width: 40vw;
+        width: 15rem;
         max-width: 24rem;
         height: 67px;
 
@@ -441,19 +461,23 @@ Cipher button
 
 }
 @media only screen and (min-width: 1024px) {
+    .body__btns-container {
+        padding-top: 3rem;
+        grid-area: Cyph;
+    }
     #form {
         width: 100%;
         padding-left: 1rem;
         padding-right: 1rem;
     }
     .cipher-btn__desencriptar {
-        width: 28rem;
-        max-width: 30vw;
+        width: 17rem;
+        max-width: 27vw;
         height: 67px;
     }
     .cipher-btn__encriptar {
-        width: 28rem;
-        max-width: 30vw;
+        width: 17rem;
+        max-width: 27vw;
         height: 67px;
 
     }
@@ -464,13 +488,14 @@ RESULT
 ------------------------------------------------
 ----------------------------------------------*/
 .body__result-inner {
-    padding: 1rem;
-    
+    padding: 1.7rem;
 }
+
 .result__empty, .result__response {
-    background-color: #cbcabcad;
-    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.41);
+    background-color:#e3e3d8;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.131);
     border-radius: 15px;
+    border: 1px solid #1a1b1321;
 }
 
 .result__empty {
@@ -480,6 +505,7 @@ RESULT
     align-items: center;
     padding: 3rem;
     animation: fadein .4s;
+    min-height: 15rem;
 
 }
 .result__empty h2 {
@@ -544,11 +570,15 @@ RESULT
         max-height: 95vh;
         padding: 1rem;
     }
+    
 }
 @media only screen and (min-width: 1024px) {
     .body__result-container {
-        grid-area: result;
-        
+        padding: 1rem;
+        padding-right: 2rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        grid-area: output;
     }
     .body__result-inner {
         padding: 0rem;
@@ -561,8 +591,8 @@ RESULT
         align-items: center;
         padding: 1rem;
         height: 95%;
-        margin-top: 2rem;
-        margin-right: 2rem;
+        /* margin-top: 2rem;
+        margin-right: 2rem; */
     }
 
     .result__response {
@@ -571,8 +601,8 @@ RESULT
         align-items: center;
         padding: 1rem;
         height: 95%;
-        margin-top: 2rem;
-        margin-right: 2rem;
+        /* margin-top: 2rem;
+        margin-right: 2rem; */
         max-height: 95vh;
     }
     .result__made-text {
