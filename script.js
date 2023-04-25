@@ -24,6 +24,7 @@ copyBtn.addEventListener('click', function() {
   copyBtn.innerHTML = `Copiado!`
 })
 
+
 function handleChange(event) {
     event.preventDefault()
     inputTextWithCapital = event.target.value

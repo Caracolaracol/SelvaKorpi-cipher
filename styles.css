@@ -137,14 +137,22 @@ body {
     box-sizing: border-box;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: .4fr 1.3fr .12fr .2fr 1fr;
+    grid-template-rows: .38fr 1.3fr .12fr .2fr 1fr;
     position: relative;
     min-height: 100vh;
     
 }
  
-
-
+#tsparticles {
+    width:100%;
+    height: 100%;
+    z-index: 10;
+}
+@media only screen and (min-width: 420px){ 
+    .body__container {
+        grid-template-rows: .48fr 1.3fr .12fr .2fr 1fr;
+    }
+}
 @media only screen and (min-width: 640px) {
     .body__container {
         grid-template-rows: .4fr 1.3fr .12fr .3fr 1fr;
@@ -180,7 +188,8 @@ Logo
 ----------------------------------------------*/
 
 .body__logo-container img {
-    width:80px;
+    width:110px;
+    max-width: 22vw;
     padding:0.2rem;
     margin-right: .4rem;
     margin-left: .2rem;
@@ -192,23 +201,33 @@ Logo
 .body__logo-container {
     display: flex;
     align-items: center;
-    padding-top: 1.2rem;
+    padding-top: 0;
     padding-bottom: .5rem;
     margin-left:.4rem;
-    
 }
 
 .body__logo-container h1 {
-    font-size: 28px;
+    font-size: 24px;
     font-family: 'TommyRegular';
     color: var(--negro);
 }
 .body__logo-container h2 {
-    font-size: 14px;
+    font-size: 13px;
     font-family: 'TommyLight';
     color: var(--negro);
 }
-
+@media only screen and (min-width: 420px){
+    .body__logo-container img {
+        width:110px;
+        max-width:none
+    }
+    .body__logo-container h1 {
+        font-size: 28px;
+    }
+    .body__logo-container h2 {
+        font-size: 14px;
+    }
+}
 @media only screen and (min-width: 640px) {
     .body__logo-container img {
         width:150px;
@@ -226,17 +245,24 @@ Logo
         padding-top: .2rem;
     }
 }
+
 @media only screen and (min-width: 1024px) {
     .body__logo-container img {
         width:180px;
         padding:0.6rem;
     }
     .body__logo-container h1 {
-        font-size: 3.7rem;
+        font-size: 2.9rem;
     }
     .body__logo-container {
         grid-area: Title;
         transform: translateX(-25px) translateY(-36px);
+    }
+}
+
+@media only screen and (min-width: 1234px) {
+    .body__logo-container h1 {
+        font-size: 3.7rem;
     }
 }
 /*----------------------------------------------
@@ -258,7 +284,7 @@ Text Area
     resize: none;
     font-family: 'TommyLight';
     font-size: 32px;
-    background-color:#e7e7dc;
+    background-color:#e1e1d4;
     color: var(--negro);
     
     animation: fadein .4s;
@@ -393,7 +419,7 @@ Cipher button
     border-radius: 24px;
     border: 1px solid var(--violetdark);
     box-shadow: 0px 6px 21px -2px rgba(0, 0, 0, 0.25);
-    color: white;
+    color: #e5e3ed;
     font-size: 18px;
     font-family: 'Tommy';
     letter-spacing: 1px;
@@ -405,18 +431,18 @@ Cipher button
 }
 
 .cipher-btn__encriptar:hover {
-    background-color: #dadcca;
-    color: #2f3024;
-    border: 1px solid #dadcca;
+    background-color: #171813;
+    color: #e5e3ed;
+    border:2px solid #dadcca;
 }
 .cipher-btn__encriptar:active {
-    background-color: #b3b5a4;
+    background-color: #6d6e64;
 }
 .cipher-btn__desencriptar {
     width: 70vw;
     height: 67px;
     color: var(--negro);
-    background-color: #e5e3ed;
+    background-color: #e9e9e5;
     border-radius: 24px;
     border: 1px solid var(--violet);
     box-shadow: 0px 6px 21px -2px rgba(0, 0, 0, 0.25);
@@ -431,12 +457,12 @@ Cipher button
 }
     
 .cipher-btn__desencriptar:hover {
-    background-color: #2f3024;
-    color: #dadcca;
-    border: 1px solid #2f3024;
+    background-color: #fbfbfb;
+    color: var(--bg-color);
+    border: 3px solid #e0dfd7;
 }
 .cipher-btn__desencriptar:active {
-    background-color: #1a1b13;
+    background-color: #6d6e64;
 }
 
 @media only screen and (min-width: 640px) {
@@ -492,10 +518,10 @@ RESULT
 }
 
 .result__empty, .result__response {
-    background-color:#e3e3d8;
+    background-color:#f7f7ef;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.131);
     border-radius: 15px;
-    border: 1px solid #1a1b1321;
+    
 }
 
 .result__empty {
@@ -556,7 +582,7 @@ RESULT
     animation: fadein .4s;
     font-family: 'TommyLight';
     font-weight: 300;
-    font-size: 18px;
+    font-size: 24px;
 }
 @media only screen and (min-width: 640px)  {
     .result__empty {
@@ -610,5 +636,8 @@ RESULT
     }
     .result__empty h2 { 
      font-size: 24px;    
+    }
+    .text-cipher {
+        font-size: 28px;
     }
 }
