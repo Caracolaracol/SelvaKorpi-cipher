@@ -550,6 +550,7 @@ RESULT
     max-width: 41vw;
     opacity: 0.6;
     margin-top: auto;
+    user-select: none;
 }
 .result__made-text {
     font-size: 12px;
