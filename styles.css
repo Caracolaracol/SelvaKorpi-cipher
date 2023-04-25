@@ -137,7 +137,7 @@ body {
     box-sizing: border-box;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: .38fr 1.3fr .12fr .2fr 1fr;
+    grid-template-rows: .38fr .8fr .12fr .3fr 1fr;
     position: relative;
     min-height: 100vh;
     
