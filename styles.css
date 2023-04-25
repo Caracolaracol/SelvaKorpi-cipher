@@ -644,6 +644,9 @@ RESULT
     .result__empty h2 { 
      font-size: 24px;    
     }
+    .result__empty img {
+        max-width: 17vw;
+    }
     .text-cipher {
         font-size: 28px;
     }
