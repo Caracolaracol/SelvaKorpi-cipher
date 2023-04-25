@@ -545,6 +545,12 @@ RESULT
     max-width: 20vw;
     opacity: 0.6;
 }
+.result__response img {
+    padding-top: 4rem;
+    max-width: 41vw;
+    opacity: 0.6;
+    margin-top: auto;
+}
 .result__made-text {
     font-size: 12px;
     font-family: 'TommyRegular';
@@ -604,6 +610,9 @@ RESULT
     .result__empty img {
         max-width: 20vw;
     }
+    .result__response img {
+        max-width: 28vw;
+    }
 }
 @media only screen and (min-width: 1024px) {
     .body__result-container {
@@ -646,6 +655,9 @@ RESULT
     }
     .result__empty img {
         max-width: 17vw;
+    }
+    .result__response img {
+        max-width: 23vw;
     }
     .text-cipher {
         font-size: 28px;

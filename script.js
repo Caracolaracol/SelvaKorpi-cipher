@@ -139,8 +139,8 @@ function deCipher(text) {
       let result = text.replace(/p/gi, "S");
       for (let i = 0; i < 9; i++) {
         result = result.replace(
-          new RegExp(arrayVocalsSenit[i], "g"),
-          arrayChangesSenit[i].toUpperCase()
+          new RegExp(arrayChangesSenit[i], "g"),
+          arrayVocalsSenit[i].toUpperCase()
         );
       }
       let loweredresut = result.toLowerCase();
