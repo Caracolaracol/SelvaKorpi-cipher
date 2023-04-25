@@ -540,6 +540,11 @@ RESULT
     font-size: 17px;
 }
 
+.result__empty img {
+    padding-top: 4rem;
+    max-width: 20vw;
+    opacity: 0.6;
+}
 .result__made-text {
     font-size: 12px;
     font-family: 'TommyRegular';
@@ -596,7 +601,9 @@ RESULT
         max-height: 95vh;
         padding: 1rem;
     }
-    
+    .result__empty img {
+        max-width: 20vw;
+    }
 }
 @media only screen and (min-width: 1024px) {
     .body__result-container {
