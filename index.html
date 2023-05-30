@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="nositelinkssearchbox" />
     <meta name="google" content="notranslate" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;700&family=Inter&family=Questrial&display=swap" rel="stylesheet">  
     <link rel="stylesheet" href="styles.css">
 
     <title> Caracolaracol || Traductor Selva Korpi</title>
@@ -26,7 +27,7 @@
 
         <div class="body__input-container">
 
-                <textarea form="form" id="message" name="message" class="input__textarea" type="text" placeholder="Ingrese texto aqui" required> </textarea>
+                <textarea form="form" wrap="off" id="message" name="message" class="input__textarea" type="text" placeholder="Ingrese texto aqui" required> </textarea>
             
         </div>
 
@@ -61,26 +62,27 @@
             </form>
         </div>
 
-        <div class="body__result-container">
-            <div class="body__result-inner">
-                <div class="result__empty">
-                    <h2>Aquí va tu texto cifrado 
-                    </h2>
-                    <!-- <div id="tsparticles"></div> -->
-                    <img src="./assets/planta.png" alt="planta ilustrada del siglo xvii">
 
-                </div> 
-                
-                <div class="result__response">
-                    <div class="result__text-container">
+    </div>
+    <div class="body__result-container">
+        <div class="body__result-inner">
+            <div class="result__empty">
+                <h2>Aquí va tu texto cifrado 
+                </h2>
+                <!-- <div id="tsparticles"></div> -->
+                <img src="./assets/planta.png" alt="planta ilustrada del siglo xvii">
 
-                        <span class="text-cipher">
-                            
-                        </span>
-                    </div>
-                    <img src="./assets/planta2.png" alt="planta ilustrada del siglo xvii">
-                    <button class="result__btn-copy">Copiar</button>
+            </div> 
+            
+            <div class="result__response">
+                <div class="result__text-container">
+
+                    <p class="text-cipher">
+                        
+                    </p>
                 </div>
+                <img src="./assets/planta2.png" alt="planta ilustrada del siglo xvii">
+                <button class="result__btn-copy">Copiar</button>
             </div>
         </div>
     </div>

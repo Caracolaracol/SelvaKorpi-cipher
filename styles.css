@@ -71,8 +71,7 @@ html {
     font-size: 100%;
     font-family: inherit;
     box-sizing: border-box;
-    height: 100vh;
-    min-height: 100%;
+
 }
 
 a {
@@ -100,8 +99,10 @@ a:hover {
     color: #312559;
 }
 body {
-    min-height: 100vh;
-
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #efefed 0%, #eeeee4 20%, #f7f7e9 100%);
+    gap: 3rem;
 }
 @font-face {
     font-family: 'Tommy';
@@ -132,48 +133,36 @@ body {
 1. Universal Styles
 ------------------------------------------------
 ----------------------------------------------*/
+
 .body__container {
-    background: linear-gradient(180deg, #efefed 0%, #eeeee4 20%, #f7f7e9 100%);
     box-sizing: border-box;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 120px 1.3fr .12fr .3fr minmax(90vh, 600px);
-    position: relative;
-    min-height: 100vh;
-    
+    display: flex;
+    flex-direction: column;
+    position: relative;  
+    gap: 1rem;
 }
  
 @media only screen and (min-width: 420px){ 
-    .body__container {
-        grid-template-rows: 160px .5fr .12fr .2fr minmax(75vh, 600px);
-    }
+
 }
 @media only screen and (min-width: 640px) {
-    .body__container {
-        grid-template-rows: .4fr .5fr .12fr .3fr 1fr;
-    }
+
 }
 
 @media only screen and (min-width: 1024px) {
     .body__container {
-        grid-template-columns: 2fr 1.3fr; 
-        grid-template-rows: .8fr 2.2fr 0.1fr 1.1fr;
-        grid-template-areas: 
-    "Title output"
-    "input output"
-    "Transformer output"
-    "Cyph output"; 
-    padding: 3rem 1rem 2rem 3rem;
 
+    /* padding: 3rem 1rem 2rem 3rem; */
+    padding: 5rem;
     }
 
 }
 @media only screen and (min-width: 1424px) {
-    .body__container {
+/*     .body__container {
  
     padding: 3rem;
 
-    }
+    } */
 
 }
 /*----------------------------------------------
@@ -197,18 +186,20 @@ Logo
     display: flex;
     align-items: center;
     padding-top: 0;
-    padding-bottom: .5rem;
+    grid-area: Title;
+    /* padding-bottom: .5rem; */
     margin-left:.4rem;
 }
 
 .body__logo-container h1 {
     font-size: 24px;
-    font-family: 'TommyRegular';
+    font-family: 'IBM Plex Mono', sans-serif;
     color: var(--negro);
 }
 .body__logo-container h2 {
     font-size: 13px;
-    font-family: 'TommyLight';
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
     color: var(--negro);
 }
 @media only screen and (min-width: 420px){
@@ -237,7 +228,7 @@ Logo
     }
     .body__logo-container {
         padding-left:0rem;
-        padding-top: .2rem;
+        /* padding-top: .2rem; */
     }
 }
 
@@ -268,7 +259,12 @@ Text Area
 .body__input-container {
     display: flex;
     justify-content: center;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
+    grid-area: input;
+    max-width: 100%;
+    overflow: hidden;
+    height: 23vh;
+    
 }
 
 .input__textarea {
@@ -276,12 +272,16 @@ Text Area
     border: 0;
     border-radius: 15px;
     width: 80%;
+    max-height: 25rem;
     resize: none;
-    font-family: 'TommyLight';
-    font-size: 32px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 200;
+    font-size: 18px;
     background-color:#e1e1d4;
     color: var(--negro);
-    
+    overflow: auto hidden;
+    white-space: pre-wrap;
+    word-wrap: break-word;
     animation: fadein .4s;
 }
 @keyframes fadein {
@@ -306,10 +306,10 @@ Advice text
 .body__advice-container {
     display: flex;
     flex-direction: column;
-    padding-bottom: 1rem;
+    /* padding-bottom: 1rem; */
     gap:1rem;
     justify-content:center;
-    
+    grid-area: Transformer;
 }
 .advice__inner {
     display: flex;
@@ -318,7 +318,8 @@ Advice text
     gap: 10px;
 }
 .advice__inner p {
-    font-family: 'TommyLight';
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 200;
 }
 .advice__select {
     border:none;
@@ -396,7 +397,7 @@ Cipher button
 .body__btns-container {
     display: flex;
     justify-content: center;
-    
+    grid-area: Cyph;
 }
 
 .btns__inner {
@@ -483,7 +484,7 @@ Cipher button
 }
 @media only screen and (min-width: 1024px) {
     .body__btns-container {
-        padding-top: 3rem;
+        /* padding-top: 3rem; */
         grid-area: Cyph;
     }
     #form {
@@ -508,13 +509,20 @@ Cipher button
 RESULT
 ------------------------------------------------
 ----------------------------------------------*/
+.body__result-container {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    padding-bottom: 1rem;
+ }
 .body__result-inner {
-    padding: 1.7rem;
-    overflow: auto;
+/*     padding: 1.7rem;
+    overflow: auto; */
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    height: 100%;
+    width: 80%;
+    /* height: 100%; */
 }
 
 .result__empty, .result__response {
@@ -532,12 +540,12 @@ RESULT
     padding: 3rem;
     animation: fadein .4s;
     min-height: 15rem;
-    height: 100%;
+    /* height: 100%; */
 
 }
 .result__empty h2 {
-    font-family: 'TommyLight';
-    font-style: italic;
+    font-family: 'IBM Plex Mono', monospace;
+
     font-size: 17px;
 }
 
@@ -548,16 +556,15 @@ RESULT
 }
 .result__response img {
     padding-top: 4rem;
-    max-width: 41vw;
+    max-width: 24vw;
     opacity: 0.6;
     margin-top: auto;
     user-select: none;
 }
 .result__made-text {
     font-size: 12px;
-    font-family: 'TommyRegular';
-   
-    font-style: italic;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
     margin-top: .3rem;
     
 }
@@ -568,7 +575,7 @@ RESULT
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
-    overflow: auto;
+    overflow: hidden;
     max-height: 95vh;
     animation: fadein .4s;
 }
@@ -589,14 +596,17 @@ RESULT
 }
 .result__text-container {
     overflow: auto;
+    max-width: 90%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 .text-cipher {
     animation: fadein .4s;
-    font-family: 'TommyLight';
-    font-weight: 300;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 200;
     font-size: 24px;
-    overflow: auto;
-    white-space: pre-wrap;
+    text-align: left;
+    
 }
 @media only screen and (min-width: 640px)  {
     .result__empty {
@@ -619,15 +629,15 @@ RESULT
 }
 @media only screen and (min-width: 1024px) {
     .body__result-container {
-        padding: 1rem;
-        padding-right: 2rem;
+       /*  padding: 1rem; */
+/*         padding-right: 2rem;
         padding-top: 2rem;
-        padding-bottom: 2rem;
+        padding-bottom: 2rem; */
         grid-area: output;
     }
     .body__result-inner {
         padding: 0rem;
-        height: 98%;
+ /*        height: 98%; */
         
     }
     .result__empty {
@@ -635,7 +645,7 @@ RESULT
         flex-direction: column;
         align-items: center;
         padding: 1rem;
-        height: 95%;
+     /*    height: 95%; */
         /* margin-top: 2rem;
         margin-right: 2rem; */
     }
