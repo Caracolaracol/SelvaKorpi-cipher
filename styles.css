@@ -107,7 +107,7 @@ body {
     .body__container {
         padding: 1rem;
         width: 60%;
-        justify-content: space-around;
+        justify-content: space-between;
 
     }
 }
@@ -153,15 +153,10 @@ body {
     font-weight: 400;
     color: var(--negro);
 }
+
 @media only screen and (min-width: 1024px) {
-    .body__logo-container {
-        flex-grow: .6;
-    }
-    .body__logo-container img {
-        width:95px;
-    }
     .body__logo-container h1 {
-        font-size: 54px;
+        font-size: 43px;
     }
     .body__logo-container h2 {
         font-size: 24px;
@@ -169,6 +164,19 @@ body {
     .body__logo-container p {
         font-size: 24px;
     }
+    .body__logo-container {
+        flex-grow: 1;
+    }
+    .body__logo-container img {
+        width:95px;
+    }
+}
+@media only screen and (min-width: 1224px) {
+    
+    .body__logo-container h1 {
+        font-size: 50px;
+    }
+    
 }
 @media only screen and (min-width: 1440px) {
     .body__logo-container {
@@ -178,7 +186,7 @@ body {
         width:120px;
     }
     .body__logo-container h1 {
-        font-size: 74px;
+        font-size: 68px;
     }
     .body__logo-container h2 {
         font-size: 34px;
@@ -196,8 +204,8 @@ Input textarea
 .body__input-container {
     display: flex;
     justify-content: center;
-    max-width: 100%;
-    height: 23vh;
+     max-width: 100%;
+    /* height: 23vh; */
    
 }
 
@@ -226,7 +234,8 @@ Input textarea
 @media only screen and (min-width: 1024px) {
     .body__input-container {
         max-width: 100%;
-        height: 40%;
+        /* height: 40%; */
+        flex-grow: 3;
     }
     .input__textarea {
         max-height: 100%;
@@ -244,11 +253,12 @@ Advice text
     display: flex;
     flex-direction: row;
     justify-content:center;
+    align-items: center;
     gap: 4px;
 }
 .advice__inner {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     gap:8px;
     max-width: 30%;
 }
@@ -275,6 +285,10 @@ Advice text
 }
 
 @media only screen and (min-width: 1024px) {
+    .body__advice-container {
+        flex-grow: 0.1;
+        align-items: center;
+    }
     .advice__inner {
         max-width: 35%;
     }
@@ -331,11 +345,13 @@ Cipher button
 }
 
 @media only screen and (min-width: 1024px) {
+
     .cipher-btn__encriptar {
         width: 40vw;
     }
     .body__btns-container {
-        flex-grow: 1;
+        align-items: center;
+        flex-grow: 1.3;
     }
 }
 /* .cipher-btn__desencriptar {
@@ -427,9 +443,8 @@ RESULT
 }
 
 .result__response img {
-    max-width:100%;
     padding-top: 2rem;
-    width: 60vw;
+    max-width:20vw;
     opacity: 0.8;
 }
 
@@ -472,8 +487,8 @@ RESULT
 @media only screen and (min-width: 1024px) {
     .body__result-container {
         padding: 2rem;
-        padding-top: 5rem;
-        padding-bottom: 5rem;
+        padding-top: 15vh;
+        padding-bottom: 15vh;
         width: 40%;
         height: 100%;
     }
@@ -489,9 +504,8 @@ RESULT
         height: 100%;
     }
     .result__response img, .result__empty img {
-        max-width:100%;
+        max-width:14vw;
         padding-top: 0rem;
-        width: 20vw;
     }
     .result__text-container {
         display: flex;
@@ -501,7 +515,5 @@ RESULT
         width: 80%;
         height: 67px;
         margin-top: 0rem;
-
-    
     }
 }
