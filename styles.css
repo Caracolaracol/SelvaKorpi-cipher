@@ -466,14 +466,19 @@ RESULT
     background-color: var(--violet);
 }
 .result__text-container {
-    overflow: auto;
-    overflow-x: hidden;
+/*     overflow: auto;
+    overflow-x: hidden; */
     display: flex;
-    max-width: 90%;
-    white-space: pre-wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+    max-width: 90%; 
+    
+/*     white-space: pre-wrap;
     word-wrap: break-word;
+     overflow-wrap: break-word;
     text-overflow: ellipsis;
-    overflow-wrap: break-word;
+     */
 }
 .text-cipher {
     animation: fadein .4s;
@@ -481,7 +486,8 @@ RESULT
     font-weight: 200;
     font-size: 24px;
     text-align: left;
-    
+    overflow-wrap: break-word;
+    overflow-x: hidden;
 }
 
 @media only screen and (min-width: 1024px) {

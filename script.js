@@ -1,6 +1,6 @@
 const message = document.getElementById('message')
 const cipherbtn = document.querySelector('.cipher-btn__encriptar')
-const decipherbtn = document.querySelector('.cipher-btn__desencriptar')
+/* const decipherbtn = document.querySelector('.cipher-btn__desencriptar') */
 const cipheredMessage = document.querySelector('.text-cipher')
 const messagetocipher = document.querySelector('.text-to-cipher')
 const resultResponse = document.querySelector('.result__response')
@@ -18,10 +18,11 @@ const ACCENTS_VOWELS = "áéíóúàèìòùâêîôûäëïöü";
 message.value = ''
 message.addEventListener('input', handleChange)
 cipherbtn.addEventListener('click', handleCipher)
-decipherbtn.addEventListener('click', handleDecipher)
+/* decipherbtn.addEventListener('click', handleDecipher) */
 copyBtn.addEventListener('click', function() {
+  console.log(cipheredMessage)
   navigator.clipboard.writeText(cipheredMessage.innerText); 
-  copyBtn.innerHTML = `Copiado!`
+  copyBtn.innerHTML = `Copiado`
 })
 
 
