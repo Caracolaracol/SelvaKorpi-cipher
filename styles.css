@@ -1,40 +1,3 @@
-/*************************************************
-**************************************************
-
-Website Name: 
-Website URL: 
-Website Author: Tabitha Turton
-Author URL: tabithaturton.com
-Copyright 2017. All Rights Reserved.
-
-Color Guide
-***************
-
-*************************************************
-
-Type Guide
-***************
-
-
-Debugging Tools
-***************
-border: 1px solid #fff;
-
-*************************************************/
-
-/************************************************
-*************************************************
-0. CSS Reset ------------------------ 
-1. Universal Styles -----------------
-2. Header & Nav Styles -------------- 
-3. Main Body Styles ----------------- 
-4. Sidebar Styles ------------------- 
-5. Widget Styles --------------------
-6. Footer Styles -------------------- 
-7. Comments & Form Styles ----------- 
-8. Generic Styles ----------- 
-*************************************************
-************************************************/
 
 /*----------------------------------------------
 ------------------------------------------------
@@ -47,10 +10,16 @@ border: 1px solid #fff;
     --dark-blue-400: #072861;
     --light-blue100: #F3F5FC;
     --negro: #272430;
-    --violet:#d7d2eb ;
     --violethover:#e8e5f5;
     --violetlight:#594b88 ;
     --violetdark: #312559;
+    
+    --bg:#E5E5E5;
+    --violet:#d7d2eb ;
+    --blancotextarea:#2401840f;
+    --blancoresult:#2401840f;
+    --violetaselect:#a08fd2;
+    --violetadark:#252527;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
@@ -98,97 +67,69 @@ a:visited {
 a:hover {
     color: #312559;
 }
-body {
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(180deg, #efefed 0%, #eeeee4 20%, #f7f7e9 100%);
-    gap: 3rem;
-}
-@font-face {
-    font-family: 'Tommy';
-    src: url('./assets/fonts/MADE Tommy Soft Medium PERSONAL USE.otf') format('opentype');
-    font-style: normal;
-    font-weight: normal;
-  }
-  @font-face {
-    font-family: 'TommyLight';
-    src: url('./assets/fonts/MADE Tommy Soft Light PERSONAL USE.otf') format('opentype');
-  
-  }
-  @font-face {
-    font-family: 'TommyRegular';
-    src: url('./assets/fonts/MADE Tommy Soft Regular PERSONAL USE.otf') format('opentype');
-    font-style: normal;
-    font-weight: normal;
-  }
 
-  @font-face {
-    font-family: 'TommyBold';
-    src: url('./assets/fonts/MADE TOMMY ExtraBold_PERSONAL USE.otf') format('opentype');
-    font-style: normal;
-    font-weight: bold;
-  }
+
+
 /*----------------------------------------------
 ------------------------------------------------
 1. Universal Styles
 ------------------------------------------------
 ----------------------------------------------*/
+body {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #efefed 0%, #eeeee4 20%, #f7f7e9 100%);
+    gap: 3rem;
+    background-image: url('./assets/nnnoise2.svg');
+    background-repeat: repeat;
+    padding: 1rem;
+    height: 100vh;
+}
+
+@media only screen and (min-width: 1024px) {
+    body {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
 
 .body__container {
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     position: relative;  
     gap: 1rem;
 }
- 
-@media only screen and (min-width: 420px){ 
-
-}
-@media only screen and (min-width: 640px) {
-
-}
-
 @media only screen and (min-width: 1024px) {
     .body__container {
+        padding: 1rem;
+        width: 60%;
+        justify-content: space-around;
 
-    /* padding: 3rem 1rem 2rem 3rem; */
-    padding: 5rem;
     }
-
 }
-@media only screen and (min-width: 1424px) {
-/*     .body__container {
- 
-    padding: 3rem;
 
-    } */
-
-}
 /*----------------------------------------------
 ------------------------------------------------
-Logo
+2. Logo Container
 ------------------------------------------------
 ----------------------------------------------*/
 
-.body__logo-container img {
-    width:110px;
-    max-width: 22vw;
-    padding:0.2rem;
-    margin-right: .4rem;
-    margin-left: .2rem;
-    
-}
-.logo__title > h1 {
-    vertical-align: text-top;
-}
 .body__logo-container {
     display: flex;
     align-items: center;
-    padding-top: 0;
-    grid-area: Title;
-    /* padding-bottom: .5rem; */
-    margin-left:.4rem;
+    padding: 1rem;
+    gap:.5rem
+}
+
+.body__logo-container img {
+    width:60px;
+    height: fit-content;
+}
+
+.logo__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .body__logo-container h1 {
@@ -202,69 +143,42 @@ Logo
     font-weight: 400;
     color: var(--negro);
 }
-@media only screen and (min-width: 420px){
-    .body__logo-container img {
-        width:110px;
-        max-width:none
-    }
-    .body__logo-container h1 {
-        font-size: 28px;
-    }
-    .body__logo-container h2 {
-        font-size: 14px;
-    }
+.body__logo-container p {
+    font-size: 13px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    color: var(--negro);
 }
-@media only screen and (min-width: 640px) {
-    .body__logo-container img {
-        width:150px;
-        padding:1rem;
-        margin-right: 1rem;
-    }
-    .body__logo-container h1 {
-        font-size: 3.1rem;
-    }
-    .body__logo-container h2 {
-        font-size: 18px;
-    }
-    .body__logo-container {
-        padding-left:0rem;
-        /* padding-top: .2rem; */
-    }
-}
-
 @media only screen and (min-width: 1024px) {
+    .body__logo-container {
+        flex-grow: .6;
+    }
     .body__logo-container img {
-        width:180px;
-        padding:0.6rem;
+        width:140px;
     }
     .body__logo-container h1 {
-        font-size: 2.9rem;
+        font-size: 46px;
     }
-    .body__logo-container {
-        grid-area: Title;
-        transform: translateX(-25px) translateY(-36px);
+    .body__logo-container h2 {
+        font-size: 24px;
+    }
+    .body__logo-container p {
+        font-size: 24px;
     }
 }
 
-@media only screen and (min-width: 1234px) {
-    .body__logo-container h1 {
-        font-size: 3.7rem;
-    }
-}
 /*----------------------------------------------
 ------------------------------------------------
-Text Area
+Input textarea
 ------------------------------------------------
 ----------------------------------------------*/
+
 .body__input-container {
     display: flex;
     justify-content: center;
-    /* padding-bottom: 20px; */
-    grid-area: input;
     max-width: 100%;
-    overflow: hidden;
     height: 23vh;
-    
+   
 }
 
 .input__textarea {
@@ -277,27 +191,30 @@ Text Area
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 200;
     font-size: 18px;
-    background-color:#e1e1d4;
+    background-color:var(--blancotextarea);
     color: var(--negro);
-    overflow: auto hidden;
     white-space: pre-wrap;
     word-wrap: break-word;
     animation: fadein .4s;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.131);
 }
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
-@media only screen and (min-width: 640px) {
-    .input__textarea {
-        width: 80%;
-    }
-}
-@media only screen and (min-width:1024px) {
+
+@media only screen and (min-width: 1024px) {
     .body__input-container {
-        grid-area: input;
+        max-width: 100%;
+        height: 40%;
+    }
+    .input__textarea {
+        max-height: 100%;
     }
 }
+
+
+
 /*----------------------------------------------
 ------------------------------------------------
 Advice text
@@ -305,99 +222,56 @@ Advice text
 ----------------------------------------------*/
 .body__advice-container {
     display: flex;
-    flex-direction: column;
-    /* padding-bottom: 1rem; */
-    gap:1rem;
+    flex-direction: row;
     justify-content:center;
-    grid-area: Transformer;
+    gap: 4px;
 }
 .advice__inner {
     display: flex;
-    justify-content: flex-center;
-    padding-left: 3rem;
-    gap: 10px;
+    align-items: center;
+    gap:8px;
+    max-width: 30%;
 }
 .advice__inner p {
     font-family: 'IBM Plex Mono', monospace;
-    font-weight: 200;
+    font-weight: 400;
+    font-size: 10px;
 }
 .advice__select {
     border:none;
     height: fit-content;
     padding: 8px;
-    padding-left: 12px;
-    padding-right: 12px;
-    background-color: #272430;
-    color: var(--violet);
+    background-color: var(--violetaselect);
+    color: var(--negro);
     border-radius: 7px;
-    font-size: 18px;
-    width: 40vw;
-    margin: 0 auto;
+    font-size: 15px;
+    width: 35vw;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
 }
 .advice__select:hover {
-    background-color: #393930;
-    
+    background-color: #1c1c19;
+    color: var(--violetaselect);
 }
 
-@media only screen and (min-width: 640px) {
-    .body__advice-container {
-        display: flex;
-        justify-content:center;
-        align-items: center;
-        flex-direction: row;
-        gap:1;
-    
-    }
-    .advice__inner {
-        width: auto;
-        max-width: none;
-        padding-left: 0;
-        margin: 0;
-        justify-content:center;
-       
-    }   
-    .advice__select {
-        width: 12rem;
-        margin-left: 0;
-    margin-right: 0;
-    }
-}
 @media only screen and (min-width: 1024px) {
-
     .advice__inner {
-        width: auto;
-        max-width: none;
-        padding-left: 0;
-        margin: 0;
-        justify-content:center
-       
-    }   
-    .body__advice-container {
-        display: flex;
-        justify-content:center;
-        align-items: center;
-        flex-direction: row;
-        gap:1;
-        padding-bottom:0;
-        grid-area: Transformer;
+        max-width: 35%;
     }
-
     .advice__select {
-        width: 10rem;
-        margin-left: 0;
-    margin-right: 0;
+        width: 20vw;
     }
-    
 }
+
 /*----------------------------------------------
 ------------------------------------------------
 Cipher button
 ------------------------------------------------
 ----------------------------------------------*/
+
 .body__btns-container {
     display: flex;
     justify-content: center;
-    grid-area: Cyph;
 }
 
 .btns__inner {
@@ -411,13 +285,14 @@ Cipher button
 .cipher-btn__encriptar {
     width: 70vw;
     height: 67px;
-    background: #272430;
+    background: var(--violetadark);
     border-radius: 24px;
     border: 1px solid var(--violetdark);
     box-shadow: 0px 6px 21px -2px rgba(0, 0, 0, 0.25);
     color: #e5e3ed;
-    font-size: 18px;
-    font-family: 'Tommy';
+    font-size: 24px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
     letter-spacing: 1px;
     transition-property: all;
     transition-duration: 100ms;
@@ -434,7 +309,16 @@ Cipher button
 .cipher-btn__encriptar:active {
     background-color: #6d6e64;
 }
-.cipher-btn__desencriptar {
+
+@media only screen and (min-width: 1024px) {
+    .cipher-btn__encriptar {
+        width: 40vw;
+    }
+    .body__btns-container {
+        flex-grow: 1;
+    }
+}
+/* .cipher-btn__desencriptar {
     width: 70vw;
     height: 67px;
     color: var(--negro);
@@ -459,146 +343,98 @@ Cipher button
 }
 .cipher-btn__desencriptar:active {
     background-color: #6d6e64;
-}
+} */
 
-@media only screen and (min-width: 640px) {
-    .btns__inner {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        padding: 0px;
-        gap: 24px;
-    } 
-    .cipher-btn__desencriptar {
-        width: 15rem;
-        max-width: 24rem;
-        height: 67px;
-    }
-    .cipher-btn__encriptar {
-        width: 15rem;
-        max-width: 24rem;
-        height: 67px;
 
-    }
-
-}
-@media only screen and (min-width: 1024px) {
-    .body__btns-container {
-        /* padding-top: 3rem; */
-        grid-area: Cyph;
-    }
-    #form {
-        width: 100%;
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-    .cipher-btn__desencriptar {
-        width: 17rem;
-        max-width: 27vw;
-        height: 67px;
-    }
-    .cipher-btn__encriptar {
-        width: 17rem;
-        max-width: 27vw;
-        height: 67px;
-
-    }
-}
 /*----------------------------------------------
 ------------------------------------------------
 RESULT
 ------------------------------------------------
 ----------------------------------------------*/
+
 .body__result-container {
     display: flex;
-    justify-content: center;
-    max-width: 100%;
-    padding-bottom: 1rem;
- }
-.body__result-inner {
-/*     padding: 1.7rem;
-    overflow: auto; */
-    display: flex;
-    justify-content: flex-start;
     flex-direction: column;
-    width: 80%;
-    /* height: 100%; */
+    position: relative;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
+    height: 100%;
+ }
+
+.body__result-inner {
+    padding: 1rem;
+    height: 100%;
 }
 
 .result__empty, .result__response {
-    background-color:#f7f7ef;
+    background-color:var(--blancoresult);
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.131);
     border-radius: 15px;
-    
-}
-
-.result__empty {
+    padding: 20px;
+    gap:2rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-    padding: 3rem;
-    animation: fadein .4s;
-    min-height: 15rem;
-    /* height: 100%; */
-
+    justify-content: space-between;
+    overflow: auto hidden;
+    height: 100%;
 }
-.result__empty h2 {
-    font-family: 'IBM Plex Mono', monospace;
-
-    font-size: 17px;
+.result__text-container {
+    max-width: 100%;
+    overflow: auto;
 }
-
-.result__empty img {
-    padding-top: 4rem;
-    max-width: 20vw;
-    opacity: 0.6;
-}
-.result__response img {
-    padding-top: 4rem;
-    max-width: 24vw;
-    opacity: 0.6;
-    margin-top: auto;
-    user-select: none;
-}
-.result__made-text {
-    font-size: 12px;
+.result__empty h2, .text-cipher {
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
-    margin-top: .3rem;
-    
+    font-size: 18px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
+
+.result__empty img{
+    max-width: 100%;
+    width: 33vw;
+}
+
 
 .result__response {
     display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem;
-    overflow: hidden;
-    max-height: 95vh;
-    animation: fadein .4s;
+}
+
+.result__response img {
+    max-width:100%;
+    padding-top: 2rem;
+    width: 60vw;
 }
 
 .result__btn-copy {
     width: 80%;
-    height: 67px;
+    min-height: 67px;
     color: var(--violetdark);
     background-color: var(--light-blue100);
     border-radius: 24px;
     border: 1px solid var(--dark-blue-300);
-    margin-top: 4rem;
+    margin-top: 2rem;
     font-size: 18px;
-    font-family: 'Tommy';
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+
 }
+
 .result__btn-copy:active {
     background-color: var(--violet);
 }
 .result__text-container {
     overflow: auto;
+    overflow-x: hidden;
+    display: flex;
     max-width: 90%;
     white-space: pre-wrap;
     word-wrap: break-word;
+    text-overflow: ellipsis;
+    overflow-wrap: break-word;
 }
 .text-cipher {
     animation: fadein .4s;
@@ -608,71 +444,40 @@ RESULT
     text-align: left;
     
 }
-@media only screen and (min-width: 640px)  {
-    .result__empty {
-        display: flex;
-    }
-    .result__empty h2 {
-        font-size: 17px;
-    }
-    .result__response {
-        display: none;
-        max-height: 95vh;
-        padding: 1rem;
-    }
-    .result__empty img {
-        max-width: 20vw;
-    }
-    .result__response img {
-        max-width: 28vw;
-    }
-}
+
 @media only screen and (min-width: 1024px) {
     .body__result-container {
-       /*  padding: 1rem; */
-/*         padding-right: 2rem;
-        padding-top: 2rem;
-        padding-bottom: 2rem; */
-        grid-area: output;
+        padding: 2rem;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        width: 40%;
+        height: 100%;
+    }
+    .result__empty, .result__response {
+        height: 100%;
+        max-height: max-content;
+        padding: 20px;
+        justify-content: space-between;
+        height: 100%;
     }
     .body__result-inner {
         padding: 0rem;
- /*        height: 98%; */
-        
+        height: 100%;
     }
-    .result__empty {
+    .result__response img, .result__empty img {
+        max-width:100%;
+        padding-top: 0rem;
+        width: 20vw;
+    }
+    .result__text-container {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem;
-     /*    height: 95%; */
-        /* margin-top: 2rem;
-        margin-right: 2rem; */
+        min-height: 27%;
     }
+    .result__btn-copy {
+        width: 80%;
+        height: 67px;
+        margin-top: 0rem;
 
-    .result__response {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem;
-        height: 95%;
-        /* margin-top: 2rem;
-        margin-right: 2rem; */
-        max-height: 95vh;
-    }
-    .result__made-text {
-        font-size: 14px;
-    }
-    .result__empty h2 { 
-     font-size: 24px;    
-    }
-    .result__empty img {
-        max-width: 17vw;
-    }
-    .result__response img {
-        max-width: 23vw;
-    }
-    .text-cipher {
-        font-size: 28px;
+    
     }
 }
