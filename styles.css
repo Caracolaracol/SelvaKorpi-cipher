@@ -156,7 +156,7 @@ body {
 
 @media only screen and (min-width: 1024px) {
     .body__logo-container h1 {
-        font-size: 43px;
+        font-size: 40px;
     }
     .body__logo-container h2 {
         font-size: 24px;
@@ -186,7 +186,7 @@ body {
         width:120px;
     }
     .body__logo-container h1 {
-        font-size: 68px;
+        font-size: 62px;
     }
     .body__logo-container h2 {
         font-size: 34px;
@@ -235,7 +235,7 @@ Input textarea
     .body__input-container {
         max-width: 100%;
         /* height: 40%; */
-        flex-grow: 3;
+        flex-grow: 10;
     }
     .input__textarea {
         max-height: 100%;
