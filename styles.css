@@ -170,7 +170,23 @@ body {
         font-size: 24px;
     }
 }
-
+@media only screen and (min-width: 1440px) {
+    .body__logo-container {
+        flex-grow: .6;
+    }
+    .body__logo-container img {
+        width:120px;
+    }
+    .body__logo-container h1 {
+        font-size: 74px;
+    }
+    .body__logo-container h2 {
+        font-size: 34px;
+    }
+    .body__logo-container p {
+        font-size: 34px;
+    }
+}
 /*----------------------------------------------
 ------------------------------------------------
 Input textarea
