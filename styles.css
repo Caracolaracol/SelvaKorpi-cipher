@@ -127,7 +127,7 @@ body {
 
 .body__logo-container img {
     width:60px;
-    height: fit-content;
+    height: auto;
 }
 
 .logo__title {
